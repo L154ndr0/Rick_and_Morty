@@ -10,7 +10,6 @@ async function loadCharacters(){
   console.log(data)
 }
 loadCharacters()
-
 </script>
 
 <template>
@@ -18,11 +17,8 @@ loadCharacters()
     <h1 class="text-5xl">Personajes de Rick and Morty</h1>
   </div>
 
-  <div v-for="Personajes in character" :key="character.id">
-    {{ personajes.name }}
-
+  <div v-for="personajes in character" :key="character.id">
+    <Card :character="personajes"></Card>
   </div>
-
-<Card :character="character.value"></Card>
 
 </template>

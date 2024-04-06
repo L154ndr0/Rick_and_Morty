@@ -1,19 +1,22 @@
-<script setup>
-import { defineProps } from 'vue';
-
-    const props = defineProps({
-        character: []
-    })
-    console.log()
-</script>
 
 <template>
     <div>
         <div>
-            <img src=""alt="">
+            <img :src="character.image" alt="">
         </div>
         <div>
-            <h3>nombre</h3>
+        <h3>{{ character.name }}</h3>
         </div>
     </div>
 </template>
+
+<script setup>
+import { defineProps } from 'vue';
+
+    const props = defineProps({
+        character:{
+        required:true,
+        type: Object
+        }
+    })
+</script>
