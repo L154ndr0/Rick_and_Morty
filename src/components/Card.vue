@@ -1,6 +1,6 @@
 
 <template>
-    <div>
+    <div class="flex flex-col overflow-hidden rounded-xl shadow-xl">
         <div>
             <img :src="character.image" alt="">
         </div>
