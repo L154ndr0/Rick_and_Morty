@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import Card from "../components/Card.vue/"
+import router from '@/router';
 let character = ref([])
 let page = ref(1)
 
@@ -31,15 +32,15 @@ loadCharacters()
     <h1 class="text-5xl">Personajes de Rick and Morty</h1>
   </div>
 
-  <div class="flex justify-center m-4 space-x-4">
-  <button class="bg-gray-300 rounded-x1 text-center" @click="previousPage" :disabled="page===1">Pagina anterior</button>
+  <div class="flex justify-center items-center m-4 space-x-4">
+  <button class="bg-gray-300 rounded-xl text-center p-4" @click="previousPage" :disabled="page===1">< Pagina anterior</button>
   <div>{{ page }}</div>
-  <button class="bg-gray-300 rounded-x1 text-center" @click="nextPage">Siguiente pagina</button>
+  <button class="bg-gray-300 rounded-xl text-center p-4" @click="nextPage">Siguiente pagina ></button>
   </div>
-  <div class="grid grid-cols-4 m-5">  
-    <div v-for="personajes in character" :key="character.id">
+  <div class="grid grap-4 grid-cols-5 m-6">  
+    <router-link v-for="personajes in character" :key="personajes.id" :to="`/${personajes.id}`">
       <Card :character="personajes"></Card>
-    </div>
+    </router-link>
   </div>
 
 </template>
