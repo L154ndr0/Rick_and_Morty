@@ -11,7 +11,6 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
 
     const props = defineProps({
         character:{
@@ -19,4 +18,5 @@ import { defineProps } from 'vue';
         type: Object
         }
     })
+
 </script>
